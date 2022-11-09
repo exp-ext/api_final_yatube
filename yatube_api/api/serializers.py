@@ -27,13 +27,13 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'author', 'text', 'pub_date', 'image', 'group')
+        fields = '__all__'
 
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
-        fields = ('title', 'slug', 'description')
+        fields = '__all__'
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -44,7 +44,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ('id', 'author', 'post', 'text', 'created')
+        fields = '__all__'
 
 
 class FollowSerializer(serializers.ModelSerializer):
@@ -60,7 +60,7 @@ class FollowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Follow
-        fields = ('user', 'following')
+        fields = '__all__'
 
     def create(self, validated_data):
         user = self.context['request'].user
@@ -70,7 +70,7 @@ class FollowSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Подписка на самого себя невозможна!'
             )
-        if Follow.objects.filter(user=user, following=following).count() > 0:
+        if user.follower.filter(following=following).exists():
             raise serializers.ValidationError(
                 'Подписка уже оформлена'
             )
