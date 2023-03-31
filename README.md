@@ -12,10 +12,9 @@
 <ul>
 <li>Python</li>
 <li>Django</li>
-<li>Unittest</li>
-<li>Bootstrap</li>
-<li>CSS</li>
-<li>HTML</li>
+<li>Pytest</li>
+<li>djangorestframework</li>
+<li>PyJWT</li>
 <li>PostgreSQL</li>
 <li>Docker</li>
 <li>Github Actions</li>
@@ -23,7 +22,7 @@
 <hr />
 <h3>Зависимости</h3>
 <ul>
-<li>Перечислены в файле yatube/requirements.txt</li>
+<li>Перечислены в файле yatube_api/requirements.txt</li>
 </ul>
 <hr />
 <h3>Особенности реализации</h3>
@@ -39,7 +38,7 @@
 <li>Клонируйте на локальный компьютер репозиторий;</li>
 <li>Создайте файл /infra/.env. Шаблон для заполнения файла находится в /infra/.env.example;</li>
 <li>В файле ./infra/nginx/default.conf.template закомментируйте строки 14:18 для получения сертификата.</li>
-<li>Скопируйте папку infra со всем содержимым на сервер `scp -r ~/yatube/infra name@IP.ad.re.ss:~/`
+<li>Скопируйте папку infra со всем содержимым на сервер `scp -r ~/yatube_api/infra name@IP.ad.re.ss:~/`
 </li>
 <li>На сервере, перейдите в папку infra/ и получите сертификаты в Let's Encrypt запустив скрипт `sudo ./init-letsencrypt.sh`</li>
 <li>Остановите сервер `docker compose down` </li>
