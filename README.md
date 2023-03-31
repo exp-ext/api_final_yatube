@@ -42,7 +42,7 @@
 </li>
 <li>На сервере, перейдите в папку infra/ и получите сертификаты в Let's Encrypt запустив скрипт `sudo ./init-letsencrypt.sh`</li>
 <li>Остановите сервер `docker compose down` </li>
-<li>Раскомментируйте строки 14:18 в файле ./infra/nginx/default.conf и впишите имя своего домена вместо `grandmasrecipes.fun`</li>
+<li>Раскомментируйте строки 12:16 в файле ./infra/nginx/default.conf и впишите имя своего домена вместо `grandmasrecipes.fun`</li>
 <li>В папке infra выполните команду `docker compose up -d --build`;</li>
 <li>Создайте суперюзера `docker compose exec web python manage.py createsuperuser`</li>
 <br /><br />
